@@ -3,13 +3,13 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {StatusBar} from 'react-native';
-import {SplashScreen, TestComponents} from './screens';
+import {Navigator} from './routes';
 
 const App = () => {
   return (
     <NavigationContainer>
-      <StatusBar />
-      <TestComponents />
+      <StatusBar translucent backgroundColor="transparent" />
+      <Navigator />
     </NavigationContainer>
   );
 };

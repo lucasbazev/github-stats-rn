@@ -14,7 +14,7 @@ export const TitleText = styled.Text`
 
 export const SubTitleText = styled.Text`
   color: whitesmoke;
-  font-family: 'Gilroy-Regular';
+  font-family: 'Gilroy-Light';
   font-size: 18px;
 `;
 
