@@ -6,14 +6,18 @@ import {
   BottomContainer,
 } from './styles';
 import {TitleText, SubTitleText, Input, Button} from '../../components';
-import {getUserInfoCall} from '../../services/calls';
+import api from '../../services/api';
 
 export const SearchScreen = () => {
   const [username, setUsername] = useState();
 
-  const getUserInfo = async () => {
-    const result = await getUserInfoCall(username);
-    console.log(result);
+  const getUserInfo = async (username) => {
+    try {
+      const result = await api.get(`/${username}`);
+      console.log(result);
+    } catch (error) {
+      console.log({Erro: error});
+    }
   };
 
   return (
@@ -25,10 +29,7 @@ export const SearchScreen = () => {
         </TopContainer>
 
         <BottomContainer>
-          <Input
-            placeholder="Username"
-            onChangeText={text => setUsername(text)}
-          />
+          <Input placeholder="Username" onChangeText={setUsername} />
           <Button onPress={getUserInfo} />
         </BottomContainer>
       </ContentContainer>
