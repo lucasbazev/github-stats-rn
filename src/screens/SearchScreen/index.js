@@ -1,23 +1,21 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   ScreenContainer,
   ContentContainer,
   TopContainer,
   BottomContainer,
 } from './styles';
-import {TitleText, SubTitleText, Input, Button} from '../../components';
-import api from '../../services/api';
+import { TitleText, SubTitleText, Input, Button } from '../../components';
+import { getUserInfoCall } from '../../services/calls';
 
 export const SearchScreen = () => {
-  const [username, setUsername] = useState();
+  const [username, setUsername] = useState('');
 
-  const getUserInfo = async (username) => {
-    try {
-      const result = await api.get(`/${username}`);
-      console.log(result);
-    } catch (error) {
-      console.log({Erro: error});
-    }
+  const getUserInfo = async () => {
+    const userInfo = await getUserInfoCall(username);
+    console.log(userInfo);
+
+    return userInfo;
   };
 
   return (
@@ -29,7 +27,10 @@ export const SearchScreen = () => {
         </TopContainer>
 
         <BottomContainer>
-          <Input placeholder="Username" onChangeText={setUsername} />
+          <Input
+            placeholder="Username"
+            onChangeText={text => setUsername(text)}
+          />
           <Button onPress={getUserInfo} />
         </BottomContainer>
       </ContentContainer>
