@@ -1,14 +1,14 @@
 import styled from 'styled-components/native';
 
 export const Container = styled.View`
-  margin-bottom: 5px;
+  width: 100%;
+  margin-bottom: 32px;
 `;
 
 export const InfoArea = styled.View`
-  width: 90%;
-  height: 45px;
+  width: 100%;
   background-color: #252525;
   border-radius: 5px;
-  padding-left: 14px;
+  padding: 14px 12px;
   margin-top: 10px;
 `;

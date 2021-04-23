@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 import {
   ScreenContainer,
@@ -13,10 +14,16 @@ import { useStore } from '../../stores';
 export const SearchScreen = () => {
   const [username, setUsername] = useState('');
   const { setData } = useStore();
+  const navigator = useNavigation();
 
-  const getUserInfo = async () => {
+  const goToUserScreen = () => {
+    navigator.navigate('UserScreen');
+  };
+
+  const handlePress = async () => {
     const userInfo = await getUserInfoCall(username);
     setData(userInfo);
+    goToUserScreen();
   };
 
   return (
@@ -32,7 +39,7 @@ export const SearchScreen = () => {
             placeholder="Username"
             onChangeText={text => setUsername(text)}
           />
-          <Button onPress={getUserInfo} />
+          <Button onPress={handlePress} />
         </BottomContainer>
       </ContentContainer>
     </ScreenContainer>

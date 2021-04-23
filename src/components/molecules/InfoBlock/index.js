@@ -1,13 +1,13 @@
 import React from 'react';
 
 import { Container, InfoArea } from './styles';
-import { RegularText, SubTitleText } from '../../atoms';
+import { LabelText, InfoText } from '../../atoms';
 
 export const InfoBlock = ({ label, infoText }) => (
   <Container>
-    <RegularText>{label}</RegularText>
+    <LabelText>{label}</LabelText>
     <InfoArea>
-      <SubTitleText>{infoText}</SubTitleText>
+      <InfoText>{infoText}</InfoText>
     </InfoArea>
   </Container>
 );

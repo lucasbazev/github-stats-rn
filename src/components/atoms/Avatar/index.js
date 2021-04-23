@@ -1,10 +1,5 @@
 import React from 'react';
 
-import { AvatarContainer } from './styles';
+import { AvatarImage } from './styles';
 
-export const Avatar = ({ source }) => (
-  <AvatarContainer>
-    <img src={source} />
-  </AvatarContainer>
-);
-
+export const Avatar = ({ source }) => <AvatarImage source={{ uri: source }} />;

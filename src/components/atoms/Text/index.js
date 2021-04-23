@@ -18,10 +18,17 @@ export const SubTitleText = styled.Text`
   font-size: 18px;
 `;
 
-export const RegularText = styled.Text`
+export const LabelText = styled.Text`
   color: whitesmoke;
+  opacity: 0.5;
   font-family: 'Gilroy-Regular';
   font-size: 16px;
+`;
+
+export const InfoText = styled.Text`
+  color: whitesmoke;
+  font-family: 'Gilroy-Regular';
+  font-size: 18px;
 `;
 
 export const FullNameText = styled.Text`

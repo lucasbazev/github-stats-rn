@@ -1,9 +1,10 @@
-import React, {useEffect} from 'react';
-import {StatusBar} from 'react-native';
-import {SectionView} from './styles';
+import React, { useEffect } from 'react';
+import { StatusBar } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {LogoText} from '../../components';
-import {useNavigation} from '@react-navigation/native';
+
+import { SectionView } from './styles';
+import { LogoText } from '../../components';
 
 export const SplashScreen = () => {
   const navigator = useNavigation();
