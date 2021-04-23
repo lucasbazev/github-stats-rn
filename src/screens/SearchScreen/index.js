@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import {
   ScreenContainer,
   ContentContainer,
@@ -7,15 +8,15 @@ import {
 } from './styles';
 import { TitleText, SubTitleText, Input, Button } from '../../components';
 import { getUserInfoCall } from '../../services/calls';
+import { useStore } from '../../stores';
 
 export const SearchScreen = () => {
   const [username, setUsername] = useState('');
+  const { setData } = useStore();
 
   const getUserInfo = async () => {
     const userInfo = await getUserInfoCall(username);
-    console.log(userInfo);
-
-    return userInfo;
+    setData(userInfo);
   };
 
   return (
