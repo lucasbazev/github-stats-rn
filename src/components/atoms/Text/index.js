@@ -25,40 +25,22 @@ export const LabelText = styled.Text`
   font-size: 16px;
 `;
 
-export const ErrorText = styled.Text`
-  color: #cc0000;
-  font-family: 'Gilroy-Regular';
-  font-size: 16px;
-`;
-
 export const InfoText = styled.Text`
   color: whitesmoke;
   font-family: 'Gilroy-Regular';
   font-size: 18px;
 `;
 
-export const FullNameText = styled.Text`
-  color: whitesmoke;
-  font-family: 'Gilroy-Bold';
-  font-size: 30px;
+export const ErrorText = styled.Text`
+  color: #cc0000;
+  font-family: 'Gilroy-Regular';
+  font-size: 16px;
 `;
 
 export const UsernameText = styled.Text`
   color: whitesmoke;
   font-family: 'Gilroy-Medium';
   font-size: 20px;
-`;
-
-export const SectionTitleText = styled.Text`
-  color: #31326f;
-  font-family: 'Gilroy-Bold';
-  font-size: 18px;
-`;
-
-export const ReposTitleText = styled.Text`
-  color: whitesmoke;
-  font-family: 'Gilroy-Bold';
-  font-size: 18px;
 `;
 
 export const ButtonText = styled.Text`

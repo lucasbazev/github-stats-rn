@@ -8,6 +8,7 @@ export const getUserInfoCall = async username => {
     return data;
   } catch (error) {
     console.log({ error });
+
     return error;
   }
 };

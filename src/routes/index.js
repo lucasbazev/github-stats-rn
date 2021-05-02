@@ -1,5 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+
 import { SplashScreen, SearchScreen, UserScreen } from '../screens';
 
 export const Navigator = () => {
