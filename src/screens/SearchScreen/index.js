@@ -7,12 +7,19 @@ import {
   TopContainer,
   BottomContainer,
 } from './styles';
-import { TitleText, SubTitleText, Input, Button } from '../../components';
+import {
+  TitleText,
+  SubTitleText,
+  Input,
+  Button,
+  ErrorText,
+} from '../../components';
 import { getUserInfoCall } from '../../services/calls';
 import { useStore } from '../../stores';
 
 export const SearchScreen = () => {
   const [username, setUsername] = useState('');
+  const [error, setError] = useState('');
   const { setData } = useStore();
   const navigator = useNavigation();
 
@@ -21,9 +28,13 @@ export const SearchScreen = () => {
   };
 
   const handlePress = async () => {
-    const userInfo = await getUserInfoCall(username);
-    setData(userInfo);
-    goToUserScreen();
+    if (username) {
+      const userInfo = await getUserInfoCall(username);
+      setData(userInfo);
+      goToUserScreen();
+    } else {
+      setError('You must enter a username.');
+    }
   };
 
   return (
@@ -39,6 +50,7 @@ export const SearchScreen = () => {
             placeholder="Username"
             onChangeText={text => setUsername(text)}
           />
+          {!!error && <ErrorText>{error}</ErrorText>}
           <Button onPress={handlePress} />
         </BottomContainer>
       </ContentContainer>

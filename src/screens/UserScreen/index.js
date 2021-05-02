@@ -17,9 +17,7 @@ export const UserScreen = () => {
     <ScreenContainer>
       <ContentContainer>
         <TopContainer>
-          <UsernameText>
-            {data.name ? data.name : 'You must enter a username.'}
-          </UsernameText>
+          <UsernameText>{data?.name}</UsernameText>
           <Avatar source={data?.avatar_url} />
         </TopContainer>
 

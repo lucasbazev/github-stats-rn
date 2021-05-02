@@ -25,6 +25,12 @@ export const LabelText = styled.Text`
   font-size: 16px;
 `;
 
+export const ErrorText = styled.Text`
+  color: #cc0000;
+  font-family: 'Gilroy-Regular';
+  font-size: 16px;
+`;
+
 export const InfoText = styled.Text`
   color: whitesmoke;
   font-family: 'Gilroy-Regular';
